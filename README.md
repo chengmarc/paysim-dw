@@ -14,28 +14,7 @@ An offline data warehouse built with PySpark and Hive for financial transaction 
 
 ## 1. Pipeline Overview
 
-```
-PaySim CSV (HDFS)
-       │
-       ▼
- 01_ingest.py
-       │
-       ▼
-raw_transactions          ← ODS · TEXTFILE · partitioned by tx_type
-       │
-       ▼
- 02_transform.py
-       │
-       ▼
-dwd_transactions          ← DWD · ORC + Snappy · partitioned by (tx_type, tx_day)
-       │
-       ├──────────────────────────────────┐
-       ▼                                  ▼
- 03_aggregate.py                   03_aggregate.py
-       │                                  │
-       ▼                                  ▼
-ads_fraud_summary         ads_high_risk_accounts
-```
+![pipeline](doc/pipeline_diagram.svg)
 
 See [`docs/pipeline_diagram.html`](docs/pipeline_diagram.html) for the interactive version.
 
@@ -55,15 +34,21 @@ PaySim [1] is a synthetic mobile money transaction dataset generated via agent-b
 
 ---
 
-## 3. Tech Stack
+## 3. Technical Stack
 
-| Component | Version |
+| Java Component | Version |
 |---|---|
-| PySpark [3] | 3.5.4 |
-| Hive (metastore) [4] | 3.1.3 |
+| Java | 11.0.30 |
 | Hadoop HDFS | 3.3.6 |
+| Hive (metastore) [4] | 3.1.3 |
+| Spark [3] | 3.5.4 |
+
+| Python Component | Version |
+|---|---|
 | Python | 3.11.15 |
-| Storage format | ORC + Snappy [2] |
+| PySpark [3] | 3.5.4 |
+
+Storage format： ORC + Snappy [2]
 
 ---
 
@@ -138,6 +123,7 @@ paysim-dw/
 │   └── high_risk_accounts_top50.csv
 └── docs/
     └── pipeline_diagram.html
+    └── pipeline_diagram.svg
 ```
 
 ---

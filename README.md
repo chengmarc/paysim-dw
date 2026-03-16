@@ -16,8 +16,6 @@ An offline data warehouse built with PySpark and Hive for financial transaction 
 
 ![pipeline](doc/pipeline_diagram.svg)
 
-See [`docs/pipeline_diagram.html`](docs/pipeline_diagram.html) for the interactive version.
-
 ---
 
 ## 2. Dataset

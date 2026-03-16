@@ -1,7 +1,7 @@
 [![python - 3.11.15](https://img.shields.io/static/v1?label=python&message=3.11.15&color=blue&logo=python&logoColor=white)](https://)
 [![pyspark - 3.5.4](https://img.shields.io/static/v1?label=pyspark&message=3.5.4&color=E25A1C&logo=apachespark&logoColor=white)](https://)
 [![hadoop - 3.3.6](https://img.shields.io/static/v1?label=hadoop&message=3.3.6&color=66CCFF&logo=apachehadoop&logoColor=white)](https://)
-[![hive - 3.1.3](https://img.shields.io/static/v1?label=hive&message=3.1.3&color=FDEE21&logo=apachehive&logoColor=black)](https://)
+[![hive - 3.1.3](https://img.shields.io/static/v1?label=hive&message=3.1.3&color=FDEE21&logo=apachehive&logoColor=white)](https://)
 
 # PaySim Financial Transaction Risk Data Warehouse
 

@@ -1,0 +1,6 @@
+metastore_db/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+derby.log

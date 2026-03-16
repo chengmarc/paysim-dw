@@ -1,0 +1,91 @@
+
+<style>
+.nd { cursor: pointer; }
+.nd:hover rect { opacity: .85; }
+</style>
+<svg width="100%" viewBox="0 0 680 664" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- PaySim CSV -->
+  <g class="nd" onclick="">
+    <rect x="230" y="40" width="220" height="56" rx="8" style="fill:#444441"/>
+    <text x="340" y="62" text-anchor="middle" dominant-baseline="central" style="fill:#D3D1C7;font-size:14px;font-weight:500">PaySim CSV (HDFS)</text>
+    <text x="340" y="82" text-anchor="middle" dominant-baseline="central" style="fill:#B4B2A9;font-size:11px">630万行 · 400MB</text>
+  </g>
+
+  <line x1="340" y1="96" x2="340" y2="122" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- 01_ingest -->
+  <g class="nd" onclick="">
+    <rect x="260" y="124" width="160" height="44" rx="8" style="fill:#534AB7"/>
+    <text x="340" y="146" text-anchor="middle" dominant-baseline="central" style="fill:#EEEDFE;font-size:14px;font-weight:500">01_ingest.py</text>
+  </g>
+
+  <line x1="340" y1="168" x2="340" y2="194" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- raw_transactions -->
+  <g class="nd" onclick="">
+    <rect x="220" y="196" width="240" height="56" rx="8" style="fill:#0F6E56"/>
+    <text x="340" y="214" text-anchor="middle" dominant-baseline="central" style="fill:#E1F5EE;font-size:14px;font-weight:500">raw_transactions</text>
+    <text x="340" y="236" text-anchor="middle" dominant-baseline="central" style="fill:#9FE1CB;font-size:11px">ODS · TEXTFILE · by tx_type</text>
+  </g>
+
+  <line x1="340" y1="252" x2="340" y2="278" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- 02_transform -->
+  <g class="nd" onclick="">
+    <rect x="260" y="280" width="160" height="44" rx="8" style="fill:#534AB7"/>
+    <text x="340" y="302" text-anchor="middle" dominant-baseline="central" style="fill:#EEEDFE;font-size:14px;font-weight:500">02_transform.py</text>
+  </g>
+
+  <line x1="340" y1="324" x2="340" y2="350" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- dwd_transactions -->
+  <g class="nd" onclick="">
+    <rect x="200" y="352" width="280" height="56" rx="8" style="fill:#0F6E56"/>
+    <text x="340" y="370" text-anchor="middle" dominant-baseline="central" style="fill:#E1F5EE;font-size:14px;font-weight:500">dwd_transactions</text>
+    <text x="340" y="392" text-anchor="middle" dominant-baseline="central" style="fill:#9FE1CB;font-size:11px">DWD · ORC+Snappy · tx_type, tx_day</text>
+  </g>
+
+  <line x1="340" y1="408" x2="340" y2="434" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- 03_aggregate -->
+  <g class="nd" onclick="">
+    <rect x="260" y="436" width="160" height="44" rx="8" style="fill:#534AB7"/>
+    <text x="340" y="458" text-anchor="middle" dominant-baseline="central" style="fill:#EEEDFE;font-size:14px;font-weight:500">03_aggregate.py</text>
+  </g>
+
+  <!-- L-shape left: 03左侧 (260,458) → 左到 x=160 → 下到 ADS顶 (160,548) -->
+  <path d="M260,458 L160,458 L160,548" fill="none" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- L-shape right: 03右侧 (420,458) → 右到 x=520 → 下到 ADS顶 (520,548) -->
+  <path d="M420,458 L520,458 L520,548" fill="none" style="stroke:#888;stroke-width:2.5" marker-end="url(#arr)"/>
+
+  <!-- ads_fraud_summary -->
+  <g class="nd" onclick="">
+    <rect x="50" y="548" width="220" height="56" rx="8" style="fill:#993C1D"/>
+    <text x="160" y="566" text-anchor="middle" dominant-baseline="central" style="fill:#FAECE7;font-size:14px;font-weight:500">ads_fraud_summary</text>
+    <text x="160" y="588" text-anchor="middle" dominant-baseline="central" style="fill:#F5C4B3;font-size:11px">ADS · daily fraud rates</text>
+  </g>
+
+  <!-- ads_high_risk_accounts -->
+  <g class="nd" onclick="">
+    <rect x="410" y="548" width="220" height="56" rx="8" style="fill:#993C1D"/>
+    <text x="520" y="566" text-anchor="middle" dominant-baseline="central" style="fill:#FAECE7;font-size:14px;font-weight:500">ads_high_risk_accounts</text>
+    <text x="520" y="588" text-anchor="middle" dominant-baseline="central" style="fill:#F5C4B3;font-size:11px">ADS · high-risk accounts</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="190" y="630" width="10" height="10" rx="2" style="fill:#444441"/>
+  <text x="206" y="635" dominant-baseline="central" style="fill:#888;font-size:12px">数据源</text>
+  <rect x="268" y="630" width="10" height="10" rx="2" style="fill:#534AB7"/>
+  <text x="284" y="635" dominant-baseline="central" style="fill:#888;font-size:12px">PySpark 脚本</text>
+  <rect x="378" y="630" width="10" height="10" rx="2" style="fill:#0F6E56"/>
+  <text x="394" y="635" dominant-baseline="central" style="fill:#888;font-size:12px">Hive 表</text>
+  <rect x="450" y="630" width="10" height="10" rx="2" style="fill:#993C1D"/>
+  <text x="466" y="635" dominant-baseline="central" style="fill:#888;font-size:12px">ADS 输出</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg width="680" viewBox="0 0 680 664" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- PaySim CSV -->
+  <rect x="230" y="40" width="220" height="56" rx="8" fill="#444441"/>
+  <text x="340" y="62" text-anchor="middle" dominant-baseline="central" fill="#D3D1C7" font-family="sans-serif" font-size="14" font-weight="500">PaySim CSV (HDFS)</text>
+  <text x="340" y="82" text-anchor="middle" dominant-baseline="central" fill="#B4B2A9" font-family="sans-serif" font-size="11">630万行 · 400MB</text>
+
+  <line x1="340" y1="96" x2="340" y2="122" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 01_ingest -->
+  <rect x="260" y="124" width="160" height="44" rx="8" fill="#534AB7"/>
+  <text x="340" y="146" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE" font-family="sans-serif" font-size="14" font-weight="500">01_ingest.py</text>
+
+  <line x1="340" y1="168" x2="340" y2="194" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- raw_transactions -->
+  <rect x="220" y="196" width="240" height="56" rx="8" fill="#0F6E56"/>
+  <text x="340" y="214" text-anchor="middle" dominant-baseline="central" fill="#E1F5EE" font-family="sans-serif" font-size="14" font-weight="500">raw_transactions</text>
+  <text x="340" y="236" text-anchor="middle" dominant-baseline="central" fill="#9FE1CB" font-family="sans-serif" font-size="11">ODS · TEXTFILE · by tx_type</text>
+
+  <line x1="340" y1="252" x2="340" y2="278" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 02_transform -->
+  <rect x="260" y="280" width="160" height="44" rx="8" fill="#534AB7"/>
+  <text x="340" y="302" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE" font-family="sans-serif" font-size="14" font-weight="500">02_transform.py</text>
+
+  <line x1="340" y1="324" x2="340" y2="350" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- dwd_transactions -->
+  <rect x="200" y="352" width="280" height="56" rx="8" fill="#0F6E56"/>
+  <text x="340" y="370" text-anchor="middle" dominant-baseline="central" fill="#E1F5EE" font-family="sans-serif" font-size="14" font-weight="500">dwd_transactions</text>
+  <text x="340" y="392" text-anchor="middle" dominant-baseline="central" fill="#9FE1CB" font-family="sans-serif" font-size="11">DWD · ORC+Snappy · tx_type, tx_day</text>
+
+  <line x1="340" y1="408" x2="340" y2="434" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 03_aggregate -->
+  <rect x="260" y="436" width="160" height="44" rx="8" fill="#534AB7"/>
+  <text x="340" y="458" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE" font-family="sans-serif" font-size="14" font-weight="500">03_aggregate.py</text>
+
+  <!-- L-shape arrows -->
+  <path d="M260,458 L160,458 L160,548" fill="none" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+  <path d="M420,458 L520,458 L520,548" fill="none" stroke="#888888" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- ads_fraud_summary -->
+  <rect x="50" y="548" width="220" height="56" rx="8" fill="#993C1D"/>
+  <text x="160" y="566" text-anchor="middle" dominant-baseline="central" fill="#FAECE7" font-family="sans-serif" font-size="14" font-weight="500">ads_fraud_summary</text>
+  <text x="160" y="588" text-anchor="middle" dominant-baseline="central" fill="#F5C4B3" font-family="sans-serif" font-size="11">ADS · daily fraud rates</text>
+
+  <!-- ads_high_risk_accounts -->
+  <rect x="410" y="548" width="220" height="56" rx="8" fill="#993C1D"/>
+  <text x="520" y="566" text-anchor="middle" dominant-baseline="central" fill="#FAECE7" font-family="sans-serif" font-size="14" font-weight="500">ads_high_risk_accounts</text>
+  <text x="520" y="588" text-anchor="middle" dominant-baseline="central" fill="#F5C4B3" font-family="sans-serif" font-size="11">ADS · high-risk accounts</text>
+
+  <!-- Legend -->
+  <rect x="190" y="630" width="10" height="10" rx="2" fill="#444441"/>
+  <text x="206" y="635" dominant-baseline="central" fill="#888888" font-family="sans-serif" font-size="12">数据源</text>
+  <rect x="268" y="630" width="10" height="10" rx="2" fill="#534AB7"/>
+  <text x="284" y="635" dominant-baseline="central" fill="#888888" font-family="sans-serif" font-size="12">PySpark 脚本</text>
+  <rect x="378" y="630" width="10" height="10" rx="2" fill="#0F6E56"/>
+  <text x="394" y="635" dominant-baseline="central" fill="#888888" font-family="sans-serif" font-size="12">Hive 表</text>
+  <rect x="450" y="630" width="10" height="10" rx="2" fill="#993C1D"/>
+  <text x="466" y="635" dominant-baseline="central" fill="#888888" font-family="sans-serif" font-size="12">ADS 输出</text>
+</svg>
